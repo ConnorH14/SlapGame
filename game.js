@@ -15,6 +15,8 @@ let characters = [
   }
 ]
 
+drawCharacter(0)
+
 function drawCharacter(number){
   let fighterImg = document.getElementById("fighter-img")
   let fighterHealth = document.getElementById("fighter-health")
@@ -34,6 +36,7 @@ function drawCharacter(number){
       <button onclick="punchTarget(${number})"class="btn btn-primary">Punch</button>
       <button onclick="blockTarget(${number})"class="btn btn-primary">Block</button>
       <button onclick="dodgeTarget(${number})"class="btn btn-primary">Dodge</button>
+      <button onclick="resetGame(${number})" class="btn btn-danger">Reset</button>
     `
 }
 
@@ -105,4 +108,24 @@ function blockOrDodge(block, dodge){
     }
   }
   return 0
+}
+
+function resetGame(number){
+  characters = [
+    bob = {
+      name: "Bob",
+      health: 100,
+      hits: 0,
+      block: false,
+      dodge: false
+    },
+    harry = {
+      name: "Harry",
+      health: 100,
+      hits: 0,
+      block: false,
+      dodge: false
+    }
+  ]
+  drawCharacter(number)
 }
